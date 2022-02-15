@@ -40,6 +40,12 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Update submodule
+        run: git submodule update --init --recursive
+
+      - name: list
+        run: cat ./linearmodels/pyproject.toml
+
       # Used to host cibuildwheel
       - uses: actions/setup-python@v2
         with:
